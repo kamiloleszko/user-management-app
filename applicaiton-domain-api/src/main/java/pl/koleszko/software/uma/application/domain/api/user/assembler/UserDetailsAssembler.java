@@ -8,6 +8,9 @@ import java.util.List;
 
 public final class UserDetailsAssembler {
 
+    private UserDetailsAssembler() {
+    }
+
     public static List<UserDetailsDto> assembleUsersList(List<User> users){
         List<UserDetailsDto> results = Lists.newArrayList();
         users.forEach(user -> results.add(toDto(user)));

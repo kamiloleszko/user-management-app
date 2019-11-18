@@ -45,6 +45,13 @@
             </dependency>
 
             <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock.version}</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda.time.version}</version>
@@ -64,13 +71,14 @@
         <h2.version>1.4.190</h2.version>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <j.version>1.8</j.version>
-        <groovy.version>2.4.15</groovy.version>
+        <groovy.version>2.4.7</groovy.version>
         <maven.var.plugin.version>3.2.0</maven.var.plugin.version>
         <google.guava.version>23.0</google.guava.version>
         <joda.time.version>2.10.5</joda.time.version>
         <swagger.version>2.6.1</swagger.version>
         <swagger.annotations.version>1.5.10</swagger.annotations.version>
         <guava.version>23.0</guava.version>
+        <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
 
     <build>
@@ -89,6 +97,20 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

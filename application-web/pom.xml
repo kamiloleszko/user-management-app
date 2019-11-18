@@ -32,13 +32,6 @@
     </dependency>
 
     <dependency>
-      <groupId>pl.koleszko.software.uma</groupId>
-      <artifactId>application-domain</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>

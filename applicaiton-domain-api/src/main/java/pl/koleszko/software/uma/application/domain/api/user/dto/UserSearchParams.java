@@ -9,9 +9,9 @@ public class UserSearchParams {
     @ApiModelProperty("user surname")
     private String surname;
     @ApiModelProperty("user grade")
-    private int grade;
+    private Integer grade;
     @ApiModelProperty("user salary")
-    private int salary;
+    private Integer salary;
 
     public String getName() {
         return name;
