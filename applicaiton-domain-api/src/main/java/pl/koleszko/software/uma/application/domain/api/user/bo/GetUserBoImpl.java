@@ -7,9 +7,6 @@ import pl.koleszko.software.uma.application.domain.api.user.dto.UserDetailsDto;
 import pl.koleszko.software.uma.application.domain.api.exception.UserException;
 import pl.koleszko.software.uma.application.domain.api.user.validator.UserIdValidator;
 import pl.koleszko.software.uma.application.domain.model.repository.UserRepository;
-import pl.koleszko.software.uma.application.domain.model.user.User;
-
-import java.util.Optional;
 
 @Component
 public class GetUserBoImpl implements GetUserBo {
@@ -25,8 +22,6 @@ public class GetUserBoImpl implements GetUserBo {
 
     @Override
     public UserDetailsDto getUserById(Long userId) throws UserException {
-        Optional<User> userOptional = Optional.ofNullable(repository.findOne(userId));
-        validator.validateIfUserExists(userId);
-        return UserDetailsAssembler.toDto(userOptional.get());
+        return UserDetailsAssembler.toDto(validator.validateAngGetUserIfExists(userId));
     }
 }

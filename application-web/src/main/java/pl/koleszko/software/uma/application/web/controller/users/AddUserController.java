@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import pl.koleszko.software.uma.application.domain.api.user.bo.AddUserBo;
-import pl.koleszko.software.uma.application.domain.api.user.dto.UserUpdateDto;
+import pl.koleszko.software.uma.application.domain.api.user.dto.UserDetailsDto;
+import pl.koleszko.software.uma.application.domain.api.user.dto.UserInsertDto;
 import pl.koleszko.software.uma.application.web.swagger.SwaggerTagType;
 
 @RestController
-public class AddUserController {
+public class AddUserController extends AbstractUserController {
 
     private AddUserBo addUserBo;
 
@@ -22,12 +23,11 @@ public class AddUserController {
         this.addUserBo = addUserBo;
     }
 
-    @PostMapping("/users")
+    @PostMapping("/add")
     @ApiOperation(value = "add new user", tags = SwaggerTagType.USERS)
-    public ResponseEntity addNewUser(
+    public ResponseEntity<UserDetailsDto> addNewUser(
             @ApiParam(value = "user details", required = true)
-            @RequestBody UserUpdateDto dto){
-        addUserBo.addNewUser(dto);
-        return new ResponseEntity(HttpStatus.CREATED);
+            @RequestBody UserInsertDto dto){
+        return new ResponseEntity<>(addUserBo.addNewUser(dto), HttpStatus.CREATED);
     }
 }

@@ -21,7 +21,7 @@ public class DeleteUserBoImpl implements DeleteUserBo{
 
     @Override
     public void deleteUser(Long userId) throws UserException {
-        validator.validateIfUserExists(userId);
+        validator.validateAngGetUserIfExists(userId);
         repository.delete(userId);
     }
 }

@@ -14,7 +14,7 @@ import pl.koleszko.software.uma.application.domain.api.user.bo.DeleteUserBo;
 import pl.koleszko.software.uma.application.web.swagger.SwaggerTagType;
 
 @RestController
-public class DeleteUserController {
+public class DeleteUserController extends AbstractUserController {
 
     private DeleteUserBo deleteUserBo;
 
@@ -23,7 +23,7 @@ public class DeleteUserController {
         this.deleteUserBo = deleteUserBo;
     }
 
-    @DeleteMapping("/users/delete/{userId}")
+    @DeleteMapping("/delete/{userId}")
     @ApiOperation(value = "delete user by Id", tags = SwaggerTagType.USERS)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "userId", value = "???", required = true, dataType = "Long", paramType = "path")})

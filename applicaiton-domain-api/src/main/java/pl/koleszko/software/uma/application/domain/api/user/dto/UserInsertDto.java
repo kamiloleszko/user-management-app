@@ -3,7 +3,7 @@ package pl.koleszko.software.uma.application.domain.api.user.dto;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class UserUpdateDto {
+public class UserInsertDto {
 
     @NotEmpty
     @ApiModelProperty("user name")

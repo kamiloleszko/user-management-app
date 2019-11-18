@@ -18,10 +18,11 @@ public class UserIdValidator {
         this.repository = repository;
     }
 
-    public void validateIfUserExists(Long userId) throws UserException {
+    public User validateAngGetUserIfExists(Long userId) throws UserException {
         Optional<User> userOptional = Optional.ofNullable(repository.findOne(userId));
         if (!userOptional.isPresent()){
             throw new UserException(userId);
         }
+        return userOptional.get();
     }
 }

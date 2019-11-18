@@ -18,7 +18,7 @@ import pl.koleszko.software.uma.application.web.swagger.SwaggerTagType;
 import java.util.List;
 
 @RestController
-public class GetUsersController {
+public class GetUsersController extends AbstractUserController {
 
     private GetAllUsersBo getAllUsersBo;
     private GetUserBo getUserBo;
@@ -29,13 +29,13 @@ public class GetUsersController {
         this.getUserBo = getUserBo;
     }
 
-    @GetMapping("/users/all")
+    @GetMapping("/all")
     @ApiOperation(value = "get all users", tags = SwaggerTagType.USERS)
     public ResponseEntity<List<UserDetailsDto>> getAllUsers(){
         return new ResponseEntity<>(getAllUsersBo.getAllUsers(), HttpStatus.OK);
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/{userId}")
     @ApiOperation(value = "get user by Id", tags = SwaggerTagType.USERS)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "userId", value = "???", required = true, dataType = "Long", paramType = "path")})
