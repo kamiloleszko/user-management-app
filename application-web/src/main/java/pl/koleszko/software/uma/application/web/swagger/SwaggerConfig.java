@@ -39,9 +39,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("User application management")
-                .description("User application management")
-                .version("1.0.1")
+                .title("User application management - API")
+                .description("User application management - API")
+                .version("1.0.1. prod. K.Oleszko")
                 .build();
     }
 

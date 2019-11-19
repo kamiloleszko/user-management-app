@@ -5,7 +5,6 @@ public class UserException extends Exception {
     private static final long serialVersionUID = -8764045497869415652L;
     private static final String MSG = "There is no user with provided Id: ";
 
-    private Long userId;
     private String message;
 
     public UserException(Long userId){

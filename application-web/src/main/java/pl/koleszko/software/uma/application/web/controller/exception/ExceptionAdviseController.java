@@ -1,6 +1,5 @@
 package pl.koleszko.software.uma.application.web.controller.exception;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import io.swagger.annotations.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -11,5 +11,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @PropertySource(value = {"classpath:application.properties"})
 public class DomainConfig {
 
-
 }

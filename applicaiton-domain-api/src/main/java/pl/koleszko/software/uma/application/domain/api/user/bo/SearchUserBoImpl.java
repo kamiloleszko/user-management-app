@@ -13,7 +13,6 @@ import java.util.List;
 @Component
 public class SearchUserBoImpl implements SearchUserBo {
 
-
     private UserRepositoryCustom userRepositoryCustom;
 
     @Autowired

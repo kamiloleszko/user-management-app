@@ -6,7 +6,7 @@ import pl.koleszko.software.uma.application.domain.model.repository.parameters.S
 
 public final class UserQueryHelper {
 
-    private final static String QUERY_BASIC = "select * from User u where id is not null";
+    private static final String QUERY_BASIC = "select * from User u where id is not null";
 
     private UserQueryHelper() {
     }
@@ -19,7 +19,6 @@ public final class UserQueryHelper {
 
     private static SearchConditions prepareSearchConditions(StringBuilder query, UserSearchParams searchParams, SearchConditions
             searchConditions){
-
         if (!StringUtils.isEmpty(searchParams.getName())){
             query.append(" and name =:name");
             searchConditions.getQueryParams().put("name", searchParams.getName());

@@ -13,10 +13,10 @@ public class UserInsertDto {
     private String surname;
     @NotEmpty
     @ApiModelProperty("user grade")
-    private int grade;
+    private Integer grade;
     @NotEmpty
     @ApiModelProperty("user salary")
-    private int salary;
+    private Integer salary;
 
     public String getName() {
         return name;
@@ -34,19 +34,19 @@ public class UserInsertDto {
         this.surname = surname;
     }
 
-    public int getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
-    public int getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 }

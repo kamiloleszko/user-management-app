@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import pl.koleszko.software.uma.application.domain.api.exception.UserException;
 import pl.koleszko.software.uma.application.domain.api.user.bo.GetAllUsersBo;
 import pl.koleszko.software.uma.application.domain.api.user.bo.GetUserBo;
 import pl.koleszko.software.uma.application.domain.api.user.dto.UserDetailsDto;
-import pl.koleszko.software.uma.application.domain.api.exception.UserException;
 import pl.koleszko.software.uma.application.web.swagger.SwaggerTagType;
 
 import java.util.List;

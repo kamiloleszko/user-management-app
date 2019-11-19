@@ -11,12 +11,10 @@ import pl.koleszko.software.uma.application.domain.model.repository.UserReposito
 @Component
 public class GetUserBoImpl implements GetUserBo {
 
-    private UserRepository repository;
     private UserIdValidator validator;
 
     @Autowired
-    public GetUserBoImpl(UserRepository repository, UserIdValidator validator) {
-        this.repository = repository;
+    public GetUserBoImpl(UserIdValidator validator) {
         this.validator = validator;
     }
 

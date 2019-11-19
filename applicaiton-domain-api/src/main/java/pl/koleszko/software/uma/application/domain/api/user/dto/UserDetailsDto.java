@@ -1,6 +1,5 @@
 package pl.koleszko.software.uma.application.domain.api.user.dto;
 
-
 import io.swagger.annotations.ApiModelProperty;
 
 public class UserDetailsDto {

@@ -14,7 +14,7 @@ class AddUserBoImplSpec extends Specification {
         given:
         User user
         when:
-        bo.addNewUser(prepareUserDto(true))
+        bo.addNewUser(prepareUserDto())
         then:
         1* repository.save(_) >> {arguments -> user = arguments[0]}
         user.name == "name"

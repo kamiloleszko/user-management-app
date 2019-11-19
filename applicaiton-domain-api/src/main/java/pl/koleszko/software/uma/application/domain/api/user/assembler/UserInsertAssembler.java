@@ -13,9 +13,17 @@ public final class UserInsertAssembler {
     }
 
     public static void updateFromDto(UserInsertDto dto, User user){
-        user.setName(dto.getName());
-        user.setSurname(dto.getSurname());
-        user.setGrade(dto.getGrade());
-        user.setSalary(dto.getSalary());
+        if (dto.getName() != null) {
+            user.setName(dto.getName());
+        }
+        if (dto.getSurname() != null){
+            user.setSurname(dto.getSurname());
+        }
+        if (dto.getGrade() != null) {
+            user.setGrade(dto.getGrade());
+        }
+        if (dto.getSalary() != null) {
+            user.setSalary(dto.getSalary());
+        }
     }
 }

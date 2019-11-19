@@ -6,7 +6,6 @@ import pl.koleszko.software.uma.application.domain.model.entity.BaseEntity;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
-
 public class BaseEntityListener {
 
     @PrePersist
