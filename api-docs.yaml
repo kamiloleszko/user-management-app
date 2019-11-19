@@ -1,0 +1,384 @@
+{
+  swagger: "2.0",
+  info: {
+    description: "User application management - API",
+    version: "1.0.1. prod. K.Oleszko",
+    title: "User application management - API"
+  },
+  host: "localhost:8081",
+  basePath: "/",
+  tags: [
+  {
+    name: "delete-user-controller",
+    description: "Delete User Controller"
+  },
+  {
+    name: "get-users-controller",
+    description: "Get Users Controller"
+  },
+  {
+    name: "add-user-controller",
+    description: "Add User Controller"
+  },
+  {
+    name: "update-user-controller",
+    description: "Update User Controller"
+  },
+  {
+    name: "search-user-controller",
+    description: "Search User Controller"
+  }
+  ],
+  paths: {
+    /users/add: {
+      post: {
+        tags: [
+          "Users"
+        ],
+        summary: "add new user",
+        operationId: "addNewUserUsingPOST",
+        consumes: [
+          "application/json"
+        ],
+        produces: [
+          "*/*"
+        ],
+        parameters: [
+        {
+          in: "body",
+          name: "dto",
+          description: "user details",
+          required: true,
+          schema: {
+            $ref: "#/definitions/UserInsertDto"
+          }
+        }
+        ],
+        responses: {
+          200: {
+            description: "OK",
+            schema: {
+              $ref: "#/definitions/UserDetailsDto"
+            }
+          },
+          201: {
+            description: "Created"
+          },
+          404: {
+            description: "Not found"
+          },
+          406: {
+            description: "Not acceptable"
+          },
+          500: {
+            description: "Server error"
+          }
+        }
+      }
+    },
+    /users/all: {
+      get: {
+        tags: [
+          "Users"
+        ],
+        summary: "get all users",
+        operationId: "getAllUsersUsingGET",
+        consumes: [
+          "application/json"
+        ],
+        produces: [
+          "*/*"
+        ],
+        responses: {
+          200: {
+            description: "OK",
+            schema: {
+              type: "array",
+              items: {
+                $ref: "#/definitions/UserDetailsDto"
+              }
+            }
+          },
+          201: {
+            description: "Created"
+          },
+          404: {
+            description: "Not found"
+          },
+          406: {
+            description: "Not acceptable"
+          },
+          500: {
+            description: "Server error"
+          }
+        }
+      }
+    },
+           /users/delete/{userId}: {
+    delete: {
+      tags: [
+        "Users"
+      ],
+      summary: "delete user by Id",
+      operationId: "getUserByIdUsingDELETE",
+      consumes: [
+        "application/json"
+      ],
+      produces: [
+        "*/*"
+      ],
+      parameters: [
+      {
+        name: "userId",
+        in: "path",
+        description: "???",
+        required: true,
+        type: "integer",
+        format: "int64"
+      }
+      ],
+      responses: {
+        200: {
+          description: "OK"
+        },
+        201: {
+          description: "Created"
+        },
+        404: {
+          description: "Not found"
+        },
+        406: {
+          description: "Not acceptable"
+        },
+        500: {
+          description: "Server error"
+        }
+      }
+    }
+  },
+    /users/search: {
+      post: {
+        tags: [
+          "Users"
+        ],
+        summary: "search for users",
+        operationId: "searchUsersUsingPOST",
+        consumes: [
+          "application/json"
+        ],
+        produces: [
+          "*/*"
+        ],
+        parameters: [
+        {
+          in: "body",
+          name: "searchParams",
+          description: "search params ",
+          required: true,
+          schema: {
+            $ref: "#/definitions/UserSearchParams"
+          }
+        }
+        ],
+        responses: {
+          200: {
+            description: "OK",
+            schema: {
+              type: "array",
+              items: {
+                $ref: "#/definitions/UserDetailsDto"
+              }
+            }
+          },
+          201: {
+            description: "Created"
+          },
+          404: {
+            description: "Not found"
+          },
+          406: {
+            description: "Not acceptable"
+          },
+          500: {
+            description: "Server error"
+          }
+        }
+      }
+    },
+           /users/update/{userId}: {
+    put: {
+      tags: [
+        "Users"
+      ],
+      summary: "edit existing user",
+      operationId: "addNewUserUsingPUT",
+      consumes: [
+        "application/json"
+      ],
+      produces: [
+        "*/*"
+      ],
+      parameters: [
+      {
+        in: "body",
+        name: "dto",
+        description: "user details",
+        required: true,
+        schema: {
+          $ref: "#/definitions/UserInsertDto"
+        }
+      },
+      {
+        name: "userId",
+        in: "path",
+        description: "???",
+        required: true,
+        type: "integer",
+        format: "int64"
+      }
+      ],
+      responses: {
+        200: {
+          description: "OK",
+          schema: {
+            $ref: "#/definitions/UserDetailsDto"
+          }
+        },
+        201: {
+          description: "Created"
+        },
+        404: {
+          description: "Not found"
+        },
+        406: {
+          description: "Not acceptable"
+        },
+        500: {
+          description: "Server error"
+        }
+      }
+    }
+  },
+           /users/{userId}: {
+    get: {
+      tags: [
+        "Users"
+      ],
+      summary: "get user by Id",
+      operationId: "getUserByIdUsingGET",
+      consumes: [
+        "application/json"
+      ],
+      produces: [
+        "*/*"
+      ],
+      parameters: [
+      {
+        name: "userId",
+        in: "path",
+        description: "???",
+        required: true,
+        type: "integer",
+        format: "int64"
+      }
+      ],
+      responses: {
+        200: {
+          description: "OK",
+          schema: {
+            $ref: "#/definitions/UserDetailsDto"
+          }
+        },
+        201: {
+          description: "Created"
+        },
+        404: {
+          description: "Not found"
+        },
+        406: {
+          description: "Not acceptable"
+        },
+        500: {
+          description: "Server error"
+        }
+      }
+    }
+  }
+  },
+  definitions: {
+    UserDetailsDto: {
+      type: "object",
+      properties: {
+        grade: {
+          type: "integer",
+          format: "int32",
+          description: "user grade"
+        },
+        id: {
+          type: "integer",
+          format: "int64",
+          description: "user id"
+        },
+        name: {
+          type: "string",
+          description: "user name"
+        },
+        salary: {
+          type: "integer",
+          format: "int32",
+          description: "user salary"
+        },
+        surname: {
+          type: "string",
+          description: "user surname"
+        }
+      }
+    },
+    UserSearchParams: {
+      type: "object",
+      properties: {
+        grade: {
+          type: "integer",
+          format: "int32",
+          description: "user grade"
+        },
+        name: {
+          type: "string",
+          description: "user name"
+        },
+        salary: {
+          type: "integer",
+          format: "int32",
+          description: "user salary"
+        },
+        surname: {
+          type: "string",
+          description: "user surname"
+        }
+      }
+    },
+    UserInsertDto: {
+      type: "object",
+      properties: {
+        grade: {
+          type: "integer",
+          format: "int32",
+          description: "user grade"
+        },
+        name: {
+          type: "string",
+          description: "user name"
+        },
+        salary: {
+          type: "integer",
+          format: "int32",
+          description: "user salary"
+        },
+        surname: {
+          type: "string",
+          description: "user surname"
+        }
+      }
+    }
+  }
+}
