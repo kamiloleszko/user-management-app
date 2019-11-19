@@ -1,3 +1,5 @@
+Technologies: JAVA8, SpringBoot, H2, Swagger, Groovy
+
 1. Run application
 In order to run application double click on buildAndRunApp.bat file. 
 
