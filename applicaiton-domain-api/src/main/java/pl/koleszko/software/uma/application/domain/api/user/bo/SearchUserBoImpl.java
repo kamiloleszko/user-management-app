@@ -1,7 +1,7 @@
 package pl.koleszko.software.uma.application.domain.api.user.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pl.koleszko.software.uma.application.domain.api.user.assembler.UserDetailsAssembler;
 import pl.koleszko.software.uma.application.domain.api.user.dto.UserDetailsDto;
 import pl.koleszko.software.uma.application.domain.api.user.dto.UserSearchParams;
@@ -10,7 +10,7 @@ import pl.koleszko.software.uma.application.domain.model.repository.UserReposito
 
 import java.util.List;
 
-@Component
+@Service
 public class SearchUserBoImpl implements SearchUserBo {
 
     private UserRepositoryCustom userRepositoryCustom;

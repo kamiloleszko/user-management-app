@@ -1,7 +1,7 @@
 package pl.koleszko.software.uma.application.domain.api.user.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pl.koleszko.software.uma.application.domain.api.user.assembler.UserDetailsAssembler;
 import pl.koleszko.software.uma.application.domain.api.user.assembler.UserInsertAssembler;
 import pl.koleszko.software.uma.application.domain.api.user.dto.UserDetailsDto;
@@ -9,7 +9,7 @@ import pl.koleszko.software.uma.application.domain.api.user.dto.UserInsertDto;
 import pl.koleszko.software.uma.application.domain.model.repository.UserRepository;
 import pl.koleszko.software.uma.application.domain.model.user.User;
 
-@Component
+@Service
 public class AddUserBoImpl implements AddUserBo {
 
     private UserRepository repository;

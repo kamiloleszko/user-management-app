@@ -2,12 +2,12 @@ package pl.koleszko.software.uma.application.domain.api.user.bo;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pl.koleszko.software.uma.application.domain.api.exception.UserException;
 import pl.koleszko.software.uma.application.domain.api.user.validator.UserIdValidator;
 import pl.koleszko.software.uma.application.domain.model.repository.UserRepository;
 
-@Component
+@Service
 public class DeleteUserBoImpl implements DeleteUserBo{
 
     private UserRepository repository;
